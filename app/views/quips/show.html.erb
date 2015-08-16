@@ -7,12 +7,12 @@
 
 <p>
   <strong>Context:</strong>
-  <%= @quip.context %>
+  <%= @quip.context.situation %>
 </p>
 
 <p>
   <strong>Target:</strong>
-  <%= @quip.target %>
+  <%= @quip.target.person %>
 </p>
 
 <%= link_to 'Edit', edit_quip_path(@quip) %> |

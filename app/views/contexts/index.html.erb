@@ -14,10 +14,7 @@
     <% @contexts.each do |context| %>
       <tr>
         <td><%= context.situation %></td>
-        <td><%= link_to 'Show', context %></td>
-        <td><%= link_to 'Edit', edit_context_path(context) %></td>
-        <td><%= link_to 'Destroy', context, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= radio_button_tag :context, context.situation %></td>
     <% end %>
   </tbody>
 </table>
@@ -25,3 +22,5 @@
 <br>
 
 <%= link_to 'New Context', new_context_path %>
+<%= link_to 'Targets', targets_path %>
+<%= link_to 'Tips', quips_path %>

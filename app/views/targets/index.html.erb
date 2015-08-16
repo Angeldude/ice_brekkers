@@ -14,9 +14,7 @@
     <% @targets.each do |target| %>
       <tr>
         <td><%= target.person %></td>
-        <td><%= link_to 'Show', target %></td>
-        <td><%= link_to 'Edit', edit_target_path(target) %></td>
-        <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= radio_button_tag :target, target.person %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,3 +23,5 @@
 <br>
 
 <%= link_to 'New Target', new_target_path %>
+<%= link_to 'Context', contexts_path %>
+<%= link_to 'Tips', quips_path %>

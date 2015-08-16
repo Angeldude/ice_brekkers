@@ -16,8 +16,8 @@
     <% @quips.each do |quip| %>
       <tr>
         <td><%= quip.tips %></td>
-        <td><%= quip.context %></td>
-        <td><%= quip.target %></td>
+        <td><%= quip.context.situation %></td>
+        <td><%= quip.target.person %></td>
         <td><%= link_to 'Show', quip %></td>
         <td><%= link_to 'Edit', edit_quip_path(quip) %></td>
         <td><%= link_to 'Destroy', quip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
