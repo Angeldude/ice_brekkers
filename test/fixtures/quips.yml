@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tips: MyString
+  tips: MyText
   context_id: 
   target_id: 
 
 two:
-  tips: MyString
+  tips: MyText
   context_id: 
   target_id: 
