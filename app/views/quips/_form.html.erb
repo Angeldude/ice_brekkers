@@ -1,0 +1,29 @@
+<%= form_for(@quip) do |f| %>
+  <% if @quip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quip.errors.count, "error") %> prohibited this quip from being saved:</h2>
+
+      <ul>
+      <% @quip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tips %><br>
+    <%= f.text_field :tips %>
+  </div>
+  <div class="field">
+    <%= f.label :context_id %><br>
+    <%= f.text_field :context_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target_id %><br>
+    <%= f.text_field :target_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

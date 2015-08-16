@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tips:</strong>
+  <%= @quip.tips %>
+</p>
+
+<p>
+  <strong>Context:</strong>
+  <%= @quip.context %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @quip.target %>
+</p>
+
+<%= link_to 'Edit', edit_quip_path(@quip) %> |
+<%= link_to 'Back', quips_path %>
