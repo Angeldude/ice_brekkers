@@ -1,29 +1,56 @@
 <%= form_for(@quip) do |f| %>
-  <% if @quip.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@quip.errors.count, "error") %> prohibited this quip from being saved:</h2>
+<% if @quip.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@quip.errors.count, "error") %>
+    prohibited this quip from being saved:</h2>
 
-      <ul>
-      <% @quip.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <ul>
+    <% @quip.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @targets.each do |target| %>
+    <tr>
+      <td><%= f.label :target_id, target.person %></td>
+      <td><%= f.radio_button :target_id, target.id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contexts.each do |context| %>
+    <tr>
+      <td><%= f.label :context_id, context.situation %></td>
+      <td><%= f.radio_button :context_id, context.id %></td>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </tbody>
+  </table>
 
   <div class="field">
     <%= f.label :tips %><br>
     <%= f.text_area :tips %>
   </div>
-  <div class="field">
-    <%= f.label :context_id %><br>
-    <%= f.text_field :context_id %>
-  </div>
-  <div class="field">
-    <%= f.label :target_id %><br>
-    <%= f.text_field :target_id %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>

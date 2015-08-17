@@ -5,6 +5,7 @@ class QuipsController < ApplicationController
   # GET /quips.json
   def index
     @quips = Quip.all
+
   end
 
   # GET /quips/1
@@ -14,6 +15,8 @@ class QuipsController < ApplicationController
 
   # GET /quips/new
   def new
+    @contexts = Context.all
+    @targets = Target.all
     @quip = Quip.new
   end
 

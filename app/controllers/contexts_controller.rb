@@ -33,10 +33,8 @@ class ContextsController < ApplicationController
     respond_to do |format|
       if @context.save
         format.html { redirect_to @context, notice: 'Context was successfully created.' }
-        format.json { render :show, status: :created, location: @context }
       else
         format.html { render :new }
-        format.json { render json: @context.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,10 +42,8 @@ class ContextsController < ApplicationController
   respond_to do |format|
     if @target.save
       format.html { redirect_to @target, notice: 'Target was successfully created.' }
-      format.json { render :show, status: :created, location: @target }
     else
       format.html { render :new }
-      format.json { render json: @target.errors, status: :unprocessable_entity }
     end
   end
 
@@ -85,7 +81,7 @@ class ContextsController < ApplicationController
     def context_params
       params.require(:context).permit(:situation)
     end
-    
+
     def set_target
       @target = Target.find(params[:id])
     end
