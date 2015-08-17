@@ -31,6 +31,7 @@ class QuipsController < ApplicationController
 
     respond_to do |format|
       if @quip.save
+        @quip.reload
         format.html { redirect_to @quip, notice: 'Quip was successfully created.' }
         format.json { render :show, status: :created, location: @quip }
       else

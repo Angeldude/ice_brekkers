@@ -11,7 +11,25 @@
   </ul>
 </div>
 <% end %>
+<div id="alpha">
+<table>
+  <thead>
+    <tr>
+      <th>Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contexts.each do |context| %>
+    <tr>
+      <td><%= f.label :context_id, context.situation %></td>
+      <td><%= f.radio_button :context_id, context.id %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
+<div id="beta">
 <table>
   <thead>
     <tr>
@@ -29,22 +47,9 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Situation</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @contexts.each do |context| %>
-    <tr>
-      <td><%= f.label :context_id, context.situation %></td>
-      <td><%= f.radio_button :context_id, context.id %></td>
-      <% end %>
-    </tbody>
-  </table>
+
 
   <div class="field">
     <%= f.label :tips %><br>
