@@ -1,6 +1,7 @@
 class ContextsController < ApplicationController
-  before_action :set_context, only: [:show, :edit, :update, :destroy]
-  before_action :set_target, only: [:show, :edit, :update, :destroy]
+  before_action :set_context, only: [:show, :edit, :update]
+  before_action :set_target, only: [:show, :edit, :update]
+  before_filter :authenticate_user!
 
   # GET /contexts
   # GET /contexts.json
@@ -83,7 +84,7 @@ class ContextsController < ApplicationController
     end
 
     def set_target
-      @target = Target.find(params[:id])
+      @target = Target.find(params[:target_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

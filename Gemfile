@@ -11,6 +11,9 @@ gem 'bourbon'
 gem 'bitters'
 gem 'neat'
 gem 'refills'
+
+gem 'jquery-turbolinks'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

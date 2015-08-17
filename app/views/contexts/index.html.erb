@@ -41,4 +41,7 @@
     <br>
   </div>
 
+<% if user_signed_in? %>
   <%= link_to 'New Quip', new_quip_path %>
+  <%= link_to 'Log-out', destroy_user_session_path, method: :delete %>
+  <% end %>
