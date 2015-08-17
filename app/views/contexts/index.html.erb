@@ -7,7 +7,7 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-    <%# form_tag do %>
+    <%= form_tag search_path do %>
     <tbody>
       <% @contexts.each do |context| %>
       <tr>
@@ -37,9 +37,8 @@
       </tbody>
     </table>
     <%= submit_tag 'Enter'%>
-    <%# end %>
+    <% end %>
     <br>
   </div>
 
-  <%= link_to 'New Quip', new_context_path %>
-  <%= link_to 'Tips', quips_path %>
+  <%= link_to 'New Quip', new_quip_path %>

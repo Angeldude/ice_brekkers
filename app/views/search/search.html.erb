@@ -1,0 +1,9 @@
+<% if not @result.nil? %>
+<p><%= @result.tips %></p>
+  <%= link_to "Main", contexts_path %>
+
+<% else %>
+<p>We could not find any matching results.</p>
+<%= link_to "Main", contexts_path %>
+
+<% end %>
