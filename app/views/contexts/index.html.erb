@@ -1,26 +1,45 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Contexts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Situation</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @contexts.each do |context| %>
+<div id="alpha">
+  <table>
+    <thead>
       <tr>
-        <td><%= context.situation %></td>
-        <td><%= radio_button_tag :context, context.situation %></td>
-    <% end %>
-  </tbody>
-</table>
+        <th>Situation</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <%# form_tag do %>
+    <tbody>
+      <% @contexts.each do |context| %>
+      <tr>
+        <td><%= label_tag :context, context.situation %></td>
+        <td><%= radio_button_tag :context, context.id %></td>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+  </div>
+  <div id="beta">
+    <table>
+      <thead>
+        <tr>
+          <th>Person</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @targets.each do |target| %>
+        <tr>
+          <td><%= label_tag :target, target.person %></td>
+          <td><%= radio_button_tag :target, target.id %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= submit_tag 'Enter'%>
+    <%# end %>
+    <br>
+  </div>
 
-<%= link_to 'New Context', new_context_path %>
-<%= link_to 'Targets', targets_path %>
-<%= link_to 'Tips', quips_path %>
+  <%= link_to 'New Quip', new_context_path %>
+  <%= link_to 'Tips', quips_path %>

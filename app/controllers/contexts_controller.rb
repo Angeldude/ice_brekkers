@@ -1,10 +1,12 @@
 class ContextsController < ApplicationController
   before_action :set_context, only: [:show, :edit, :update, :destroy]
+  before_action :set_target, only: [:show, :edit, :update, :destroy]
 
   # GET /contexts
   # GET /contexts.json
   def index
     @contexts = Context.all
+    @targets = Target.all
   end
 
   # GET /contexts/1
@@ -15,6 +17,7 @@ class ContextsController < ApplicationController
   # GET /contexts/new
   def new
     @context = Context.new
+    @target = Target.new
   end
 
   # GET /contexts/1/edit
@@ -25,6 +28,7 @@ class ContextsController < ApplicationController
   # POST /contexts.json
   def create
     @context = Context.new(context_params)
+    @target = Target.new(target_params)
 
     respond_to do |format|
       if @context.save
@@ -34,6 +38,16 @@ class ContextsController < ApplicationController
         format.html { render :new }
         format.json { render json: @context.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  respond_to do |format|
+    if @target.save
+      format.html { redirect_to @target, notice: 'Target was successfully created.' }
+      format.json { render :show, status: :created, location: @target }
+    else
+      format.html { render :new }
+      format.json { render json: @target.errors, status: :unprocessable_entity }
     end
   end
 
@@ -70,5 +84,14 @@ class ContextsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def context_params
       params.require(:context).permit(:situation)
+    end
+    
+    def set_target
+      @target = Target.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def target_params
+      params.require(:target).permit(:person)
     end
 end

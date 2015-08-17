@@ -13,7 +13,7 @@
   <tbody>
     <% @targets.each do |target| %>
       <tr>
-        <td><%= target.person %></td>
+        <td><%= label_tag :target, target.person %></td>
         <td><%= radio_button_tag :target, target.person %></td>
       </tr>
     <% end %>
