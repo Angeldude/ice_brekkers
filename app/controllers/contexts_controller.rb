@@ -5,6 +5,7 @@ class ContextsController < ApplicationController
   # GET /contexts
   # GET /contexts.json
   def index
+    @settings = Setting.all
     @contexts = Context.all
     @targets = Target.all
   end

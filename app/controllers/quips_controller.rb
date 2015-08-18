@@ -15,6 +15,7 @@ class QuipsController < ApplicationController
 
   # GET /quips/new
   def new
+    @settings = Setting.all
     @contexts = Context.all
     @targets = Target.all
     @quip = Quip.new
@@ -73,6 +74,6 @@ class QuipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quip_params
-      params.require(:quip).permit(:tips, :context_id, :target_id)
+      params.require(:quip).permit(:tips, :context_id, :target_id, :setting_id)
     end
 end

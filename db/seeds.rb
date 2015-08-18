@@ -5,30 +5,36 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-situations = ["School",
+situations = [
+   "School",
    "Cocktail Party",
    "Halloween Party",
    "Park",
    "Gym",
-   "Comedy",
-   "Movies"]
+   "Comedy Club",
+   "Movies",
+   "Funeral"
+ ]
+
 targets = [
-  "Mother",
-  "Firefighter",
-  "Hitman",
-  "Postman",
-  "Bounty Hunter",
-  "Repo man",
-  "Fugitive",
-  "Serial Killer",
-  "Homicide Detective",
-  "Alcoholic",
-  "Drug Lord",
-  "Wedding Planner",
   "Woman",
   "Man",
-  "Child Actor",
-  "Hand Model"
+  "Ex-love",
+  "Business Partner",
+  "Business Person",
+  "Grieving Woman",
+  "Man in Mourning",
+  "Classmate"
+]
+
+settings = [
+  "Romantic",
+  "Business",
+  "Social",
+  "Casual",
+  "Formal",
+  "Upscale",
+  "Grungy"
 ]
 
 situations.each do |s|
@@ -37,4 +43,8 @@ end
 
 targets.each do |t|
   Target.create(person: t)
+end
+
+settings.each do |s|
+  Setting.create(set: s)
 end
