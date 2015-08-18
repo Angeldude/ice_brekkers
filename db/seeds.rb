@@ -34,7 +34,12 @@ settings = [
   "Casual",
   "Formal",
   "Upscale",
-  "Grungy"
+  "Grungy",
+  "Friendly"
+]
+
+quips = [
+  ""
 ]
 
 situations.each do |s|
