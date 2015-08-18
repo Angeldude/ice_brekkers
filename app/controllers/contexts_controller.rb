@@ -1,6 +1,5 @@
 class ContextsController < ApplicationController
   before_action :set_context, only: [:show, :edit, :update]
-  before_action :set_target, only: [:show, :edit, :update]
   before_filter :authenticate_user!
 
   # GET /contexts
@@ -18,7 +17,6 @@ class ContextsController < ApplicationController
   # GET /contexts/new
   def new
     @context = Context.new
-    @target = Target.new
   end
 
   # GET /contexts/1/edit
@@ -29,7 +27,6 @@ class ContextsController < ApplicationController
   # POST /contexts.json
   def create
     @context = Context.new(context_params)
-    @target = Target.new(target_params)
 
     respond_to do |format|
       if @context.save
@@ -37,14 +34,6 @@ class ContextsController < ApplicationController
       else
         format.html { render :new }
       end
-    end
-  end
-
-  respond_to do |format|
-    if @target.save
-      format.html { redirect_to @target, notice: 'Target was successfully created.' }
-    else
-      format.html { render :new }
     end
   end
 
@@ -83,12 +72,5 @@ class ContextsController < ApplicationController
       params.require(:context).permit(:situation)
     end
 
-    def set_target
-      @target = Target.find(params[:target_id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def target_params
-      params.require(:target).permit(:person)
-    end
 end
