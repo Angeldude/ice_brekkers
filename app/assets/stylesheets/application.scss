@@ -14,22 +14,22 @@
 @import 'bourbon/bourbon';
 @import 'base/base';
 @import 'neat/neat';
-
 .outer-container {
   @include outer-container;
+
   .field {
     @include span-columns(5);
     @include shift(3);
   }
-  #alpha{
+  #alpha {
     @include fill-parent();
     @include row(table);
   }
-  #beta{
+  #beta {
     @include fill-parent();
     @include row(table);
   }
-  #gamma{
+  #gamma {
     @include fill-parent();
     @include row(table);
   }
