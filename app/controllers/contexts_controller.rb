@@ -2,6 +2,7 @@ class ContextsController < ApplicationController
   before_action :set_context, only: [:show, :edit, :update]
   before_filter :authenticate_user!
 
+
   # GET /contexts
   # GET /contexts.json
   def index
@@ -72,6 +73,5 @@ class ContextsController < ApplicationController
     def context_params
       params.require(:context).permit(:situation)
     end
-
 
 end

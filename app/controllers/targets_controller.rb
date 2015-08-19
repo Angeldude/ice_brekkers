@@ -1,10 +1,11 @@
 class TargetsController < ApplicationController
   before_action :set_target, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /targets
   # GET /targets.json
   def index
-    @targets = Target.all
+    redirect_to contexts_path
   end
 
   # GET /targets/1

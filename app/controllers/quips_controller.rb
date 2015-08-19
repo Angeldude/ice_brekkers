@@ -1,11 +1,11 @@
 class QuipsController < ApplicationController
   before_action :set_quip, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /quips
   # GET /quips.json
   def index
-    @quips = Quip.all
-
+    redirect_to contexts_path
   end
 
   # GET /quips/1
@@ -76,4 +76,5 @@ class QuipsController < ApplicationController
     def quip_params
       params.require(:quip).permit(:tips, :context_id, :target_id, :setting_id)
     end
+
 end
