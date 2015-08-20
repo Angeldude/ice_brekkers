@@ -13,19 +13,21 @@ $heading-line-height: 1.2;
 $base-border-radius: 2em;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
+$medium-spacing: $base-spacing * 1.5;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
+$blue: #CCEBF1;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
-$ice-blue: #84c7d0;
+$ice-blue: #DAF3F8;
+$white: whitesmoke;
 
 // Font Colors
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $white;
 
 // Border
 $base-border-color: $light-gray;

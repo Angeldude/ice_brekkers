@@ -27,6 +27,8 @@ a {
   color: $action-color;
   text-decoration: none;
   transition: color 0.1s linear;
+  text-shadow: 0.1em 0.3em darkblue;
+  font-weight: bold;
 
   &:active,
   &:focus,
