@@ -19,3 +19,11 @@ td,
 th {
   vertical-align: middle;
 }
+.submenu {
+  display: none;
+}
+
+.is-expanded {
+    display: block;
+    padding-bottom: 0;
+  }
