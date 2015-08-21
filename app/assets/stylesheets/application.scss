@@ -21,18 +21,40 @@
     @include span-columns(3 of 12);
     min-height: 5em;
   }
-  .context {
-    @include span-columns(3 of 12);
-    @include row();
+  .main{
+    text-align: center;
   }
-  .situation{
-    @include span-columns(3 of 12);
-    max-width: 5em;
-  }
-  .person{
-    @include span-columns(4 of 12);
+
+  .submit-center{
+    @include shift(5);
   }
 }
+.situation-flex{
+  display: flex;
+}
+
+.context {
+  flex: 1 0 0;
+}
+
+  .situation-wrapper{
+    @include span-columns(12);
+  }
+  // .one{
+  //   background-color: red;
+  // }
+  //
+  // .two{
+  //   background-color: blue;
+  // }
+  //
+  // .three{
+  //   background-color: yellow;
+  // }
+  .context{
+    @include span-columns(4 of 12);
+  }
+
 #overall_bg {
   background: linear-gradient($ice-blue, $blue);
   background-attachment: fixed;

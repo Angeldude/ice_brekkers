@@ -1,41 +1,40 @@
 <p id="notice"><%= notice %></p>
 <%= form_tag search_path do %>
+<div class="situation-wrapper">
+  <div class="situation-flex">
+    <div class="context three"><h2 class="main">Context</h2>
 
-<div class="context">Context
-  <ul>
+      <% @settings.each do |setting| %>
 
-<% @settings.each do |setting| %>
+      <%= label_tag "setting_#{setting.id}" do  %>
+      <%= radio_button_tag :setting, setting.id %>
+      <%= "#{setting.set}"%>
+        <% end %>
+      <% end %>
 
-<li><%= radio_button_tag :setting, setting.id %>
-  <%= label_tag :setting, setting.set %></li>
-<% end %>
-</ul>
+    </div>
+
+    <div class="context one"><h2 class="main">Situation</h2>
+
+        <% @contexts.each do |context| %>
+        <%= label_tag "context_#{context.id}" do %>
+        <%= radio_button_tag :context, context.id %>
+          <%= "#{context.situation}"%>
+          <% end %>
+        <% end %>
+    </div>
+
+    <div class="context two"><h2 class="main">Person</h2>
+
+        <% @targets.each do |target| %>
+        <%= label_tag "target_#{target.id}" do %>
+      <%= radio_button_tag :target, target.id %>
+          <%= "#{target.person}"%>
+        <% end %>
+        <% end %>
+    </div>
+  </div>
 </div>
 
-<br>
-<div class="situation">Situation
-  <ul>
-
-<% @contexts.each do |context| %>
-  <li><%= radio_button_tag :context, context.id %>
-  <%= "#{context.situation}"%></li>
-<% end %>
-</ul>
-</div>
-
-<br>
-
-<div class="person">Person
-  <ul>
-
-<% @targets.each do |target| %>
-
-  <li><%= radio_button_tag :target, target.id %>
-  <%= label_tag :target, target.person %></li>
-<% end %>
-</ul>
-</div>
-
-<%= submit_tag 'Enter'%>
-<% end %>
-<br>
+  <%= submit_tag 'Enter', class:"submit-center"%>
+  <% end %>

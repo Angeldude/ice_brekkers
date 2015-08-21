@@ -1,5 +1,9 @@
 nav{
   text-align: center;
+  li{
+    display: inline;
+    padding-left: $medium-spacing;
+  }
 }
 ul,
 ol {
@@ -12,10 +16,10 @@ ol {
     margin-bottom: $small-spacing;
     padding-left: $base-spacing;
   }
-  li{
-    padding-left: $medium-spacing;
-    display: inline;
-  }
+  // li{
+  //   padding-left: $medium-spacing;
+  //   display: inline;
+  // }
 
   &%default-ol {
     list-style-type: decimal;
