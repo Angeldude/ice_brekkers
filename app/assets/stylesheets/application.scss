@@ -16,21 +16,26 @@
 @import 'neat/neat';
 .outer-container {
   @include outer-container;
+  @include clearfix;
   .field {
-    @include span-columns(5);
-    @include shift(3);
+    @include span-columns(3 of 12);
+    min-height: 5em;
   }
-  #alpha {
-    @include fill-parent();
-    @include row(table);
+  .context {
+    @include span-columns(3 of 12);
+    @include row();
   }
-  #beta {
-    @include fill-parent();
-    @include row(table);
+  .situation{
+    @include span-columns(3 of 12);
+    max-width: 5em;
   }
-  #gamma {
-    @include fill-parent();
-    @include row(table);
+  .person{
+    @include span-columns(4 of 12);
   }
-
+}
+#overall_bg {
+  background: linear-gradient($ice-blue, $blue);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto;
 }

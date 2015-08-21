@@ -8,20 +8,21 @@
       <%= csrf_meta_tags %>
 </head>
 
-<body>
+<body id="overall_bg">
+  <% if user_signed_in? %>
+  <header>
+  <nav>
+    <ul>
+  <li><%= link_to 'New Quip', new_quip_path %></li>
+  <li><%= link_to 'New Context', new_setting_path %></li>
+  <li><%= link_to 'New Situation', new_context_path %></li>
+  <li><%= link_to 'New Target', new_target_path %></li>
+  <li><%= link_to 'Log-out', destroy_user_session_path, method: :delete %></li>
+  <% end %>
+</ul>
+</nav>
+</header>
   <div class="outer-container">
-
-        <% if user_signed_in? %>
-        <nav>
-          <ul>
-        <li><%= link_to 'New Quip', new_quip_path %></li>
-        <li><%= link_to 'New Context', new_setting_path %></li>
-        <li><%= link_to 'New Situation', new_context_path %></li>
-        <li><%= link_to 'New Target', new_target_path %></li>
-        <li><%= link_to 'Log-out', destroy_user_session_path, method: :delete %></li>
-        <% end %>
-      </ul>
-      </nav>
     <%= yield %>
   </div>
 </body>

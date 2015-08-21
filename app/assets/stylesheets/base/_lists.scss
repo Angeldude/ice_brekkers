@@ -1,7 +1,5 @@
-nav {
+nav{
   text-align: center;
-  @include linear-gradient($light-gray, $ice-blue);
-  border-radius: 6em;
 }
 ul,
 ol {
