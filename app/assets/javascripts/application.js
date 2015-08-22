@@ -17,23 +17,23 @@
 //= require_tree .
 
 
-// var main = function() {
-//
-//   $('.main').on('click', function(){
-//     $('#hidden').slideToggle('slow');
-//   });
-//
-//   $('#hidden').on('change', function(){
-//     $('#hidden2').slideToggle('slow');
-//   });
-//
-//   $('#hidden2').on('change', function(){
-//     $('#hidden3').slideToggle('slow');
-//   })
-//
-//   $('#hidden3').on('change', function(){
-//     $('.submit-center').slideToggle('fast');
-//   });
-//
-// };
-// $(main);
+var main = function() {
+
+  $('.main').on('click', function(){
+    $('#hidden').slideToggle('slow');
+  });
+
+  $('#hidden').on('change', function(){
+    $('#hidden2').slideToggle('slow');
+  });
+
+  $('#hidden2').on('change', function(){
+    $('#hidden3').slideToggle('slow');
+  })
+
+  $('#hidden3').on('change', function(){
+    $('.submit-center').slideToggle('fast');
+  });
+
+};
+$(main);
