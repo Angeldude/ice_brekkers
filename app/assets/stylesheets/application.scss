@@ -24,6 +24,7 @@
   @include clearfix;
   .field {
     @include span-columns(3 of 12);
+    //@include shift(4);
     min-height: 5em;
   }
   .main {
