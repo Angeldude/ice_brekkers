@@ -19,19 +19,19 @@
 
 var main = function() {
 
-  $('.main').on('click', function(){
+  $('.main').one('click', function(){
     $('#hidden').slideToggle('slow');
   });
 
-  $('#hidden').on('change', function(){
+  $('#hidden').one('change', function(){
     $('#hidden2').slideToggle('slow');
   });
 
-  $('#hidden2').on('change', function(){
+  $('#hidden2').one('change', function(){
     $('#hidden3').slideToggle('slow');
   })
 
-  $('#hidden3').on('change', function(){
+  $('#hidden3').one('change', function(){
     $('.submit-center').slideToggle('fast');
   });
 
