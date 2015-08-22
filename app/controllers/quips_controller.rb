@@ -28,6 +28,9 @@ class QuipsController < ApplicationController
   # POST /quips
   # POST /quips.json
   def create
+    @settings = Setting.all
+    @contexts = Context.all
+    @targets = Target.all
     @quip = Quip.new(quip_params)
 
     respond_to do |format|

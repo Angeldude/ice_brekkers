@@ -1,6 +1,3 @@
-<% @settings = Setting.all %>
-<% @targets = Target.all %>
-<%# @contexts = Context.all %>
 <%= form_for(@quip) do |f| %>
 <% if @quip.errors.any? %>
 <div id="error_explanation">
@@ -22,8 +19,8 @@
 
 
       <% @settings.each do |setting| %>
-        <%= f.label "setting_#{setting.id}" do  %>
-          <%= f.radio_button :setting, setting.id %>
+        <%= f.label "setting_id_#{setting.id}", setting.set do  %>
+          <%= f.radio_button :setting_id, setting.id %>
           <%= "#{setting.set}"%>
         <% end %>
       <% end %>
@@ -36,8 +33,8 @@
       <h2 class="temp">Situation</h2>
 
         <% @contexts.each do |context| %>
-          <%= label_tag "context_#{context.id}" do %>
-            <%= radio_button_tag :context, context.id %>
+          <%= f.label "context_id_#{context.id}" do %>
+            <%= f.radio_button :context_id, context.id %>
             <%= "#{context.situation}"%>
           <% end %>
         <% end %>
@@ -49,8 +46,8 @@
       <h2 class="temp">Person</h2>
 
         <% @targets.each do |target| %>
-          <%= label_tag "target_#{target.id}" do %>
-            <%= radio_button_tag :target, target.id %>
+          <%= f.label "target_id_#{target.id}" do %>
+            <%= f.radio_button :target_id, target.id %>
             <%= "#{target.person}"%>
           <% end %>
         <% end %>
