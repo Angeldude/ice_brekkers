@@ -11,35 +11,35 @@
  * file per style scope.
  *
  */
-@import 'bourbon/bourbon';
-@import 'base/base';
-@import 'neat/neat';
-
-#overall_bg {
-  @include background(linear-gradient($ice-blue, $blue) fixed no-repeat);
-  background-size: auto;
-}
-.outer-container {
-  @include outer-container;
-  @include clearfix;
-  .field {
-    @include span-columns(3 of 12);
-    min-height: 5em;
-  }
-  .main {
-    text-align: center;
-  }
-  .submit-center {
-    @include shift(5);
-  }
-  .situation-wrapper {
-    @include span-columns(12);
-    .situation-flex {
-      @include display(flex);
-      .context {
-        @include span-columns(4 of 12);
-        @include flex(1 0 0);
-      }
-    }
-  }
-}
+// @import 'bourbon/bourbon';
+// @import 'base/base';
+// @import 'neat/neat';
+//
+// #overall_bg {
+//   @include background(linear-gradient($ice-blue, $blue) fixed no-repeat);
+//   background-size: auto;
+// }
+// .outer-container {
+//   @include outer-container;
+//   @include clearfix;
+//   .field {
+//     @include span-columns(3 of 12);
+//     min-height: 5em;
+//   }
+//   .main {
+//     text-align: center;
+//   }
+//   .submit-center {
+//     @include shift(5);
+//   }
+//   .situation-wrapper {
+//     @include span-columns(12);
+//     .situation-flex {
+//       @include display(flex);
+//       .context {
+//         @include span-columns(4 of 12);
+//         @include flex(1 0 0);
+//       }
+//     }
+//   }
+// }

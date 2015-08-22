@@ -1,3 +1,6 @@
+<% @settings = Setting.all %>
+<% @targets = Target.all %>
+<%# @contexts = Context.all %>
 <%= form_for(@quip) do |f| %>
 <% if @quip.errors.any? %>
 <div id="error_explanation">
@@ -12,59 +15,48 @@
 </div>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Context</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @settings.each do |setting| %>
-      <tr>
-        <td><%= f.label :setting_id, setting.set %></td>
-        <td><%= f.radio_button :setting_id, setting.id %></td>
-      </tr>
+<div class="situation-wrapper">
+  <div class="situation-flex">
+    <div class="context three">
+      <h2 class="temp">Context</h2>
+
+
+      <% @settings.each do |setting| %>
+        <%= f.label "setting_#{setting.id}" do  %>
+          <%= f.radio_button :setting, setting.id %>
+          <%= "#{setting.set}"%>
+        <% end %>
       <% end %>
-  </tbody>
-</table>
 
-<div id="alpha">
-<table>
-  <thead>
-    <tr>
-      <th>Situation</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @contexts.each do |context| %>
-    <tr>
-      <td><%= f.label :context_id, context.situation %></td>
-      <td><%= f.radio_button :context_id, context.id %></td>
-      <% end %>
-    </tbody>
-  </table>
-</div>
 
-<div id="beta">
-<table>
-  <thead>
-    <tr>
-      <th>Person</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    </div>
 
-  <tbody>
-    <% @targets.each do |target| %>
-    <tr>
-      <td><%= f.label :target_id, target.person %></td>
-      <td><%= f.radio_button :target_id, target.id %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="context one">
+
+      <h2 class="temp">Situation</h2>
+
+        <% @contexts.each do |context| %>
+          <%= label_tag "context_#{context.id}" do %>
+            <%= radio_button_tag :context, context.id %>
+            <%= "#{context.situation}"%>
+          <% end %>
+        <% end %>
+
+    </div>
+
+    <div class="context two">
+
+      <h2 class="temp">Person</h2>
+
+        <% @targets.each do |target| %>
+          <%= label_tag "target_#{target.id}" do %>
+            <%= radio_button_tag :target, target.id %>
+            <%= "#{target.person}"%>
+          <% end %>
+        <% end %>
+      </div>
+
+  </div>
 </div>
 
 
