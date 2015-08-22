@@ -1,40 +1,44 @@
 <p id="notice"><%= notice %></p>
 <%= form_tag search_path do %>
-<div class="situation-wrapper">
-  <div class="situation-flex">
-    <div class="context three"><h2 class="main">Context</h2>
+  <div class="situation-wrapper">
+    <div class="situation-flex">
+      <div class="context three">
+        <h2 class="main">Context</h2>
 
-      <% @settings.each do |setting| %>
-
-      <%= label_tag "setting_#{setting.id}" do  %>
-      <%= radio_button_tag :setting, setting.id %>
-      <%= "#{setting.set}"%>
-        <% end %>
-      <% end %>
-
-    </div>
-
-    <div class="context one"><h2 class="main">Situation</h2>
-
-        <% @contexts.each do |context| %>
-        <%= label_tag "context_#{context.id}" do %>
-        <%= radio_button_tag :context, context.id %>
-          <%= "#{context.situation}"%>
+        <% @settings.each do |setting| %>
+          <%= label_tag "setting_#{setting.id}" do  %>
+            <%= radio_button_tag :setting, setting.id %>
+            <%= "#{setting.set}"%>
           <% end %>
         <% end %>
-    </div>
 
-    <div class="context two"><h2 class="main">Person</h2>
+      </div>
 
-        <% @targets.each do |target| %>
-        <%= label_tag "target_#{target.id}" do %>
-      <%= radio_button_tag :target, target.id %>
-          <%= "#{target.person}"%>
-        <% end %>
-        <% end %>
+      <div class="context one">
+        <h2 class="main">Situation</h2>
+
+          <% @contexts.each do |context| %>
+            <%= label_tag "context_#{context.id}" do %>
+              <%= radio_button_tag :context, context.id %>
+              <%= "#{context.situation}"%>
+            <% end %>
+          <% end %>
+
+      </div>
+
+      <div class="context two">
+        <h2 class="main">Person</h2>
+
+          <% @targets.each do |target| %>
+            <%= label_tag "target_#{target.id}" do %>
+              <%= radio_button_tag :target, target.id %>
+              <%= "#{target.person}"%>
+            <% end %>
+          <% end %>
+          
+      </div>
     </div>
   </div>
-</div>
 
-  <%= submit_tag 'Enter', class:"submit-center"%>
-  <% end %>
+    <%= submit_tag 'Enter', class:"submit-center"%>
+    <% end %>
