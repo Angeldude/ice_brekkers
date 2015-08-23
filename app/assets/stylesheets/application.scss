@@ -15,7 +15,7 @@
 @import 'bourbon/bourbon';
 @import 'base/base';
 @import 'neat/neat';
-@import url('http://fonts.googleapis.com/css?family=Francois+One');
+@import url('//fonts.googleapis.com/css?family=Francois+One');
 
 #overall_bg {
   @include background(linear-gradient($ice-blue, $blue) fixed no-repeat);
