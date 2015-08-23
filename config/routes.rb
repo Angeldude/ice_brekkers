@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :settings
-  get 'home/index'
-
   devise_for :users
   resources :quips
   resources :targets

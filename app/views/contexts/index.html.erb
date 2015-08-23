@@ -1,52 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="main-page">Welcome IceBrekker!</h1>
-  <p class="main-page">Very basic stuff here, click this button below.</p>
+<p class="main-page">Very basic stuff here, click this button below.</p>
+<button class="main-button" type="button">Click Here to Begin!</button>
 
 <%= form_tag search_path do %>
-  <div class="situation-wrapper">
-    <div class="situation-flex">
-      <div class="context three">
+<div class="situation-wrapper">
+  <div class="situation-flex">
+    <div class="context three">
+      <div id="hidden" style="display:none;">
         <h2 class="main">Context</h2>
 
-        <div id="hidden" style="display:none;">
         <% @settings.each do |setting| %>
-          <%= label_tag "setting_#{setting.id}", class:"lbls" do  %>
-            <%= radio_button_tag :setting, setting.id %>
-            <%= "#{setting.set}"%>
-          <% end %>
+        <%= label_tag "setting_#{setting.id}", class:"lbls" do  %>
+        <%= radio_button_tag :setting, setting.id %>
+        <%= "#{setting.set}"%>
+        <% end %>
         <% end %>
       </div>
 
-      </div>
+    </div>
 
-      <div class="context one">
-        <div id="hidden2" style="display:none;">
+    <div class="context one">
+      <div id="hidden2" style="display:none;">
         <h2 class="main">Situation</h2>
 
-          <% @contexts.each do |context| %>
-            <%= label_tag "context_#{context.id}", class:"lbls" do %>
-              <%= radio_button_tag :context, context.id %>
-              <%= "#{context.situation}"%>
-            <% end %>
-          <% end %>
-       </div>
+        <% @contexts.each do |context| %>
+        <%= label_tag "context_#{context.id}", class:"lbls" do %>
+        <%= radio_button_tag :context, context.id %>
+        <%= "#{context.situation}"%>
+        <% end %>
+        <% end %>
       </div>
+    </div>
 
-      <div class="context two">
-       <div id="hidden3" style="display:none;">
+    <div class="context two">
+      <div id="hidden3" style="display:none;">
         <h2 class="main">Person</h2>
 
-          <% @targets.each do |target| %>
-            <%= label_tag "target_#{target.id}", class:"lbls" do %>
-              <%= radio_button_tag :target, target.id %>
-              <%= "#{target.person}"%>
-            <% end %>
-          <% end %>
-        </div>
+        <% @targets.each do |target| %>
+        <%= label_tag "target_#{target.id}", class:"lbls" do %>
+        <%= radio_button_tag :target, target.id %>
+        <%= "#{target.person}"%>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
 
-    <%= submit_tag 'Enter', class:"submit-center", style: "display:none;"%>
-    <% end %>
+<%= submit_tag 'Enter', class:"submit-center", style: "display:none;"%>
+<% end %>

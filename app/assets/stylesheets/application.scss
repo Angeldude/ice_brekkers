@@ -15,6 +15,7 @@
 @import 'bourbon/bourbon';
 @import 'base/base';
 @import 'neat/neat';
+@import url('http://fonts.googleapis.com/css?family=Francois+One');
 
 #overall_bg {
   @include background(linear-gradient($ice-blue, $blue) fixed no-repeat);
@@ -28,27 +29,41 @@
   }
 }
 .main, .main-page{
+  color: $whitish;
+  font-family: 'Francois One';
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
 }
 .lbls{
-  font-size: 2em;
+  color: $whitish;
+  font-family: 'Francois One';
+  font-size: 1.5em;
 }
 .log-in{
   @include span-columns(3 of 12);
+}
+
+.move{
+  margin-top: 3em;
 }
 
 .outer-container {
   @include outer-container;
   @include clearfix;
   .field {
-    @include span-columns(3 of 12);
+    @include span-columns(4 of 12);
     @include shift(4);
     min-height: 5em;
   }
 
-  .submit-center {
+  .search{
     @include shift(5);
+  }
+  .main-button{
+    @include shift(4.5);
+  }
+  .submit-center {
+    @include shift(4.5);
     margin-bottom: 2em;
   }
   .situation-wrapper {

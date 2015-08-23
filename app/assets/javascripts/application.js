@@ -19,7 +19,8 @@
 
 var main = function() {
 
-  $('.main').one('click', function(){
+  $('.main-button').one('click', function(){
+    $(this).toggle();
     $('#hidden').slideToggle('slow');
   });
 
