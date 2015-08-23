@@ -3,6 +3,10 @@ nav{
   li{
     display: inline;
     padding-left: $medium-spacing;
+    &:hover{
+      font-size: 1.4em;
+      text-shadow: 0 0.3em 0.15em black;
+    }
   }
 }
 ul,

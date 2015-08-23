@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 situations = [
-   "School",
+   "Pitch Night",
    "Cocktail Party",
    "Halloween Party",
    "Park",
@@ -17,19 +17,19 @@ situations = [
  ]
 
 targets = [
+  "Hiring Partner",
+  "Business Partner",
   "Woman",
   "Man",
   "Ex-love",
-  "Business Partner",
-  "Business Person",
   "Grieving Woman",
   "Man in Mourning",
   "Classmate"
 ]
 
 settings = [
-  "Romantic",
   "Business",
+  "Romantic",
   "Social",
   "Casual",
   "Formal",
@@ -39,7 +39,8 @@ settings = [
 ]
 
 quips = [
-  ""
+  "Excuse me, I just acquired this great new app and it told me to greet you!",
+
 ]
 
 situations.each do |s|
