@@ -54,3 +54,6 @@ end
 settings.each do |s|
   Setting.create(set: s)
 end
+
+Quip.create(tips: "Look at this amazing app, the developers would love a job!", context_id: 1, setting_id: 1, target_id: 1)
+Quip.create(tips: "Excuse me, I have this amazing app and it told me to tell you that I'm available for work.", context_id: 1, setting_id: 1, target_id: 1)

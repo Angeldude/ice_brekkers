@@ -21,6 +21,7 @@ var main = function() {
 
   $('.main-button').one('click', function(){
     $(this).toggle();
+    $('.hide').toggle();
     $('#hidden').slideToggle('slow');
   });
 
