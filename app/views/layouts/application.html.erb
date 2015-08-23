@@ -26,6 +26,12 @@
   <div class="outer-container">
     <%= yield %>
   </div>
+
+<% if not user_signed_in? %>
+  <div class="logo">
+  <%= image_tag "icebrekkers_logo.png", id: "ice-logo" %>
+  </div>
+  <% end %>
 </body>
 
 </html>

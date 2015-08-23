@@ -1,9 +1,10 @@
 <% if not @result.nil? %>
-<p><%= @result.tips %></p>
-  <%= link_to "Main", contexts_path %>
+<p class="main-page"><%= @result.tips %></p>
+<%# button_to "Back", action: "" %>
+
 
 <% else %>
 <p>No one has submitted one for this yet.</p>
-<%= link_to "Main", contexts_path %>
+<%# button_tag "Back", data: link_to("Back", contexts_path)%>
 
 <% end %>
