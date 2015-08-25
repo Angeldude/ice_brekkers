@@ -23,6 +23,9 @@ class QuipsController < ApplicationController
 
   # GET /quips/1/edit
   def edit
+    @settings = Setting.all
+    @contexts = Context.all
+    @targets = Target.all
   end
 
   # POST /quips
